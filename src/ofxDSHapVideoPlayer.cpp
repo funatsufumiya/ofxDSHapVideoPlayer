@@ -1246,7 +1246,38 @@ bool ofxDSHapVideoPlayer::load(string path) {
 
     if (err != GL_NO_ERROR){
 
-        printf("error %s\n", gluErrorString(err));
+		string err_msg;
+
+		switch (err)
+		{
+		case GL_INVALID_ENUM:
+			err_msg = "GL_INVALID_ENUM";
+			break;
+		case GL_INVALID_VALUE:
+			err_msg = "GL_INVALID_VALUE";
+			break;
+		case GL_INVALID_OPERATION:
+			err_msg = "GL_INVALID_OPERATION";
+			break;
+		case GL_STACK_OVERFLOW:
+			err_msg = "GL_STACK_OVERFLOW";
+			break;
+		case GL_STACK_UNDERFLOW:
+			err_msg = "GL_STACK_UNDERFLOW";
+			break;
+		case GL_OUT_OF_MEMORY:
+			err_msg = "GL_OUT_OF_MEMORY";
+			break;
+		case GL_TABLE_TOO_LARGE:
+			err_msg = "GL_TABLE_TOO_LARGE";
+			break;
+		default:
+			err_msg = "";
+			break;
+		}
+
+        //printf("error %s\n", gluErrorString(err));
+        printf("error %s\n", err_msg);
     }
 
 	 if (!bShaderInitialized){
@@ -1417,7 +1448,38 @@ void ofxDSHapVideoPlayer::writeToTexture(ofTexture &texture) {
 
     if (err != GL_NO_ERROR){
 
-        printf("error %s\n", gluErrorString(err));
+		string err_msg;
+
+		switch (err)
+		{
+		case GL_INVALID_ENUM:
+			err_msg = "GL_INVALID_ENUM";
+			break;
+		case GL_INVALID_VALUE:
+			err_msg = "GL_INVALID_VALUE";
+			break;
+		case GL_INVALID_OPERATION:
+			err_msg = "GL_INVALID_OPERATION";
+			break;
+		case GL_STACK_OVERFLOW:
+			err_msg = "GL_STACK_OVERFLOW";
+			break;
+		case GL_STACK_UNDERFLOW:
+			err_msg = "GL_STACK_UNDERFLOW";
+			break;
+		case GL_OUT_OF_MEMORY:
+			err_msg = "GL_OUT_OF_MEMORY";
+			break;
+		case GL_TABLE_TOO_LARGE:
+			err_msg = "GL_TABLE_TOO_LARGE";
+			break;
+		default:
+			err_msg = "";
+			break;
+		}
+
+        //printf("error %s\n", gluErrorString(err));
+        printf("error %s\n", err_msg);
     }
 
     if (!ofIsGLProgrammableRenderer())
